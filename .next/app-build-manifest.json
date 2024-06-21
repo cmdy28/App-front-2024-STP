@@ -8,6 +8,7 @@
     "/(DashboardLayout)/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
+      "static/css/app/(DashboardLayout)/layout.css",
       "static/chunks/app/(DashboardLayout)/layout.js"
     ],
     "/(DashboardLayout)/loading": [
@@ -26,15 +27,20 @@
       "static/chunks/main-app.js",
       "static/chunks/app/loading.js"
     ],
-    "/(DashboardLayout)/utilities/typography/page": [
+    "/(DashboardLayout)/sample-page/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(DashboardLayout)/utilities/typography/page.js"
+      "static/chunks/app/(DashboardLayout)/sample-page/page.js"
     ],
-    "/(DashboardLayout)/utilities/shadow/page": [
+    "/(DashboardLayout)/conductores/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(DashboardLayout)/utilities/shadow/page.js"
+      "static/chunks/app/(DashboardLayout)/conductores/page.js"
+    ],
+    "/(DashboardLayout)/icons/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(DashboardLayout)/icons/page.js"
     ]
   }
 }
