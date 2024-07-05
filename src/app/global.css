@@ -1,3 +1,14 @@
 body {
-    background-color: #f5f7fa; /* Cambia esto al color que desees */
+    background-color: #f5f5f5; /* Cambia esto al color que desees */
   }
+
+.css-13biwtz{
+  align-content: center;
+}
+.css-1ttl4nx-MuiPaper-root-MuiAppBar-root{
+  border-bottom: 1px solid #F3F4F6;
+}
+.css-1je17zp-MuiContainer-root {
+  background-color: #f5f5f5;
+}
+

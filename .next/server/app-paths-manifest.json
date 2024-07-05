@@ -1,7 +1,5 @@
 {
-  "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/(DashboardLayout)/page": "app/(DashboardLayout)/page.js",
-  "/(DashboardLayout)/sample-page/page": "app/(DashboardLayout)/sample-page/page.js",
-  "/(DashboardLayout)/conductores/page": "app/(DashboardLayout)/conductores/page.js",
-  "/(DashboardLayout)/icons/page": "app/(DashboardLayout)/icons/page.js"
+  "/(DashboardLayout)/clientes/nuevo/page": "app/(DashboardLayout)/clientes/nuevo/page.js",
+  "/(DashboardLayout)/clientes/page": "app/(DashboardLayout)/clientes/page.js",
+  "/(DashboardLayout)/conductores/page": "app/(DashboardLayout)/conductores/page.js"
 }

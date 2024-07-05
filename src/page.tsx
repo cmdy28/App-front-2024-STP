@@ -1,5 +1,5 @@
 "use client";
-import { styled, Container, Box } from "@mui/material";
+import { styled, Container, Box, Breadcrumbs, Typography } from "@mui/material";
 import React, { useState } from "react";
 import Header from "@/app/(DashboardLayout)/layout/header/Header";
 import Sidebar from "@/app/(DashboardLayout)/layout/sidebar/Sidebar";
@@ -60,10 +60,14 @@ export default function RootLayout({
             maxWidth: "1200px",
           }}
         >
+          <Breadcrumbs aria-label="breadcrumb">
+          <Typography color="text.primary">151515</Typography>
+          <Typography color="text.primary">Item</Typography>
+          </Breadcrumbs>
           {/* ------------------------------------------- */}
           {/* Page Route */}
           {/* ------------------------------------------- */}
-          <Box sx={{ minHeight: "calc(100vh - 170px)" }}>{children}</Box>
+          <Box sx={{ minHeight: "calc(100vh - 170px)" }}>hola{children}</Box>
           {/* ------------------------------------------- */}
           {/* End Page */}
           {/* ------------------------------------------- */}

@@ -6,6 +6,12 @@ import {
   IconMoodHappy,
   IconTypography,
   IconUserPlus,
+  IconTir,
+  IconTractor,
+  IconSettingsCog,
+  IconChecklist,
+  IconMap2,
+  IconFileAnalytics,
 } from "@tabler/icons-react";
 
 import { uniqueId } from "lodash";
@@ -13,7 +19,7 @@ import { uniqueId } from "lodash";
 const Menuitems = [
   {
     navlabel: true,
-    subheader: "Home",
+    subheader: "Inicio",
   },
 
   {
@@ -24,7 +30,7 @@ const Menuitems = [
   },
   {
     navlabel: true,
-    subheader: "Personal",
+    subheader: "Gestión Administrativa",
   },
   {
     id: uniqueId(),
@@ -32,53 +38,70 @@ const Menuitems = [
     icon: IconUserPlus,
     href: "/conductores",
   },
-  // {
-  //   navlabel: true,
-  //   subheader: "Utilities",
-  // },
-  // {
-  //   id: uniqueId(),
-  //   title: "Typography",
-  //   icon: IconTypography,
-  //   href: "/utilities/typography",
-  // },
-  // {
-  //   id: uniqueId(),
-  //   title: "Shadow",
-  //   icon: IconCopy,
-  //   href: "/utilities/shadow",
-  // },
-  // {
-  //   navlabel: true,
-  //   subheader: "Auth",
-  // },
-  // {
-  //   id: uniqueId(),
-  //   title: "Login",
-  //   icon: IconLogin,
-  //   href: "/authentication/login",
-  // },
-  // {
-  //   id: uniqueId(),
-  //   title: "Register",
-  //   icon: IconUserPlus,
-  //   href: "/authentication/register",
-  // },
   {
-    navlabel: true,
-    subheader: "Extra",
+    id: uniqueId(),
+    title: "Vehículos",
+    icon: IconTir,
+    href: "/vehiculos",
   },
   {
     id: uniqueId(),
-    title: "Icons",
-    icon: IconMoodHappy,
-    href: "/icons",
+    title: "Maquinaria",
+    icon: IconTractor,
+    href: "/maquinaria",
+  },
+  {
+    id: uniqueId(),
+    title: "Mantenimientos",
+    icon: IconSettingsCog,
+    href: "/mantenimiento",
+  },
+  {
+    navlabel: true,
+    subheader: "Gestión de Pedidos",
+  },
+  {
+    id: uniqueId(),
+    title: "Clientes",
+    icon: IconUserPlus,
+    href: "/clientes",
+    hrefCreate: "/clientes/nuevo",
+  },
+  {
+    id: uniqueId(),
+    title: "Pedidos",
+    icon: IconChecklist,
+    href: "/pedidos",
+  },
+  {
+    navlabel: true,
+    subheader: "Gestión Operativa",
+  },
+  {
+    id: uniqueId(),
+    title: "Rutas",
+    icon: IconMap2,
+    href: "/rutas",
+  },
+  {
+    navlabel: true,
+    subheader: "Reportes",
+  },
+  {
+    id: uniqueId(),
+    title: "Reportes",
+    icon: IconFileAnalytics,
+    href: "/reportes",
   },
   // {
+  //   navlabel: true,
+  //   subheader: "Extra",
+  // },
+  // {
   //   id: uniqueId(),
-  //   title: "Sample Page",
-  //   icon: IconAperture,
-  //   href: "/sample-page",
+  //   title: "Icons",
+  //   icon: IconMoodHappy,
+  //   href: "/icons",
   // },
 ];
 

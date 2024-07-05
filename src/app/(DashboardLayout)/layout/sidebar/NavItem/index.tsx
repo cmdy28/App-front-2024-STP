@@ -19,6 +19,7 @@ type NavGroup = {
   title?: string;
   icon?: any;
   href?: any;
+  hrefCreate? : any;
   onClick?: React.MouseEvent<HTMLButtonElement, MouseEvent>;
 };
 
@@ -67,7 +68,7 @@ const NavItem = ({ item, level, pathDirect, onClick }: ItemType) => {
           component={Link}
           href={item.href}
           disabled={item.disabled}
-          selected={pathDirect === item.href}
+          selected={pathDirect === item.href || pathDirect === item.hrefCreate}
           target={item.external ? "_blank" : ""}
           onClick={onClick}
         >
