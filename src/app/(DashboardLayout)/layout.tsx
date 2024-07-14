@@ -61,10 +61,10 @@ export default function RootLayout({
             maxWidth: "1200px",
           }}
         >
-        <Breadcrumbs aria-label="breadcrumb">
+        {/* <Breadcrumbs aria-label="breadcrumb">
           <Typography color="text.primary">Modulo</Typography>
           <Typography color="text.primary">Item</Typography>
-        </Breadcrumbs>
+        </Breadcrumbs> */}
           {/* ------------------------------------------- */}
           {/* Page Route */}
           {/* ------------------------------------------- */}

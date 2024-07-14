@@ -35,7 +35,7 @@ const products = [
         post: "Project Manager",
         pname: "MedicalPro WP Theme",
         priority: "High",
-        pbg: "error.main",
+        pbg: "warning.main",
         budget: "12.8",
     },
     {

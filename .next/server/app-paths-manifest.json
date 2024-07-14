@@ -1,5 +1,5 @@
 {
-  "/(DashboardLayout)/clientes/nuevo/page": "app/(DashboardLayout)/clientes/nuevo/page.js",
-  "/(DashboardLayout)/clientes/page": "app/(DashboardLayout)/clientes/page.js",
-  "/(DashboardLayout)/conductores/page": "app/(DashboardLayout)/conductores/page.js"
+  "/(DashboardLayout)/page": "app/(DashboardLayout)/page.js",
+  "/(DashboardLayout)/conductores/page": "app/(DashboardLayout)/conductores/page.js",
+  "/(DashboardLayout)/clientes/page": "app/(DashboardLayout)/clientes/page.js"
 }

@@ -19,17 +19,6 @@ import { uniqueId } from "lodash";
 const Menuitems = [
   {
     navlabel: true,
-    subheader: "Inicio",
-  },
-
-  {
-    id: uniqueId(),
-    title: "Dashboard",
-    icon: IconLayoutDashboard,
-    href: "/",
-  },
-  {
-    navlabel: true,
     subheader: "Gestión Administrativa",
   },
   {
@@ -44,18 +33,12 @@ const Menuitems = [
     icon: IconTir,
     href: "/vehiculos",
   },
-  {
-    id: uniqueId(),
-    title: "Maquinaria",
-    icon: IconTractor,
-    href: "/maquinaria",
-  },
-  {
-    id: uniqueId(),
-    title: "Mantenimientos",
-    icon: IconSettingsCog,
-    href: "/mantenimiento",
-  },
+  // {
+  //   id: uniqueId(),
+  //   title: "Maquinaria",
+  //   icon: IconTractor,
+  //   href: "/maquinaria",
+  // },
   {
     navlabel: true,
     subheader: "Gestión de Pedidos",
@@ -84,8 +67,20 @@ const Menuitems = [
     href: "/rutas",
   },
   {
+    id: uniqueId(),
+    title: "Mantenimientos",
+    icon: IconSettingsCog,
+    href: "/mantenimiento",
+  },
+  {
     navlabel: true,
     subheader: "Reportes",
+  },
+  {
+    id: uniqueId(),
+    title: "Dashboard",
+    icon: IconLayoutDashboard,
+    href: "/",
   },
   {
     id: uniqueId(),
