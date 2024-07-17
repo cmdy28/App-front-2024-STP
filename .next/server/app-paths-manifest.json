@@ -1,5 +1,6 @@
 {
-  "/(DashboardLayout)/page": "app/(DashboardLayout)/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
   "/(DashboardLayout)/conductores/page": "app/(DashboardLayout)/conductores/page.js",
-  "/(DashboardLayout)/clientes/page": "app/(DashboardLayout)/clientes/page.js"
+  "/(DashboardLayout)/page": "app/(DashboardLayout)/page.js",
+  "/(DashboardLayout)/conductores/nuevo/page": "app/(DashboardLayout)/conductores/nuevo/page.js"
 }

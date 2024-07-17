@@ -26,6 +26,7 @@ const Menuitems = [
     title: "Conductores",
     icon: IconUserPlus,
     href: "/conductores",
+    hrefCreate: "/conductores/nuevo",
   },
   {
     id: uniqueId(),

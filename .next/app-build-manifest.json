@@ -1,9 +1,9 @@
 {
   "pages": {
-    "/(DashboardLayout)/page": [
+    "/(DashboardLayout)/conductores/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(DashboardLayout)/page.js"
+      "static/chunks/app/(DashboardLayout)/conductores/page.js"
     ],
     "/(DashboardLayout)/layout": [
       "static/chunks/webpack.js",
@@ -27,15 +27,15 @@
       "static/chunks/main-app.js",
       "static/chunks/app/loading.js"
     ],
-    "/(DashboardLayout)/conductores/page": [
+    "/(DashboardLayout)/conductores/nuevo/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(DashboardLayout)/conductores/page.js"
+      "static/chunks/app/(DashboardLayout)/conductores/nuevo/page.js"
     ],
-    "/(DashboardLayout)/clientes/page": [
+    "/(DashboardLayout)/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(DashboardLayout)/clientes/page.js"
+      "static/chunks/app/(DashboardLayout)/page.js"
     ]
   }
 }
