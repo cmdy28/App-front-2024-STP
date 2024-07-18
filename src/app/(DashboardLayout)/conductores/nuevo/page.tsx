@@ -76,7 +76,7 @@ const ConductorForm = () => {
         nombre: formData.nombre,
         cedula: formData.cedula,
         email: formData.email,
-        Sexo: formData.sexo,
+        sexo: formData.sexo,
         direccion: formData.direccion,
         celular: formData.celular,
       });

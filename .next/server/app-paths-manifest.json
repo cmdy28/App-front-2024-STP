@@ -1,6 +1,7 @@
 {
-  "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/(DashboardLayout)/conductores/page": "app/(DashboardLayout)/conductores/page.js",
-  "/(DashboardLayout)/page": "app/(DashboardLayout)/page.js",
-  "/(DashboardLayout)/conductores/nuevo/page": "app/(DashboardLayout)/conductores/nuevo/page.js"
+  "/(DashboardLayout)/vehiculos/page": "app/(DashboardLayout)/vehiculos/page.js",
+  "/(DashboardLayout)/conductores/nuevo/page": "app/(DashboardLayout)/conductores/nuevo/page.js",
+  "/(DashboardLayout)/vehiculos/nuevo/page": "app/(DashboardLayout)/vehiculos/nuevo/page.js",
+  "/(DashboardLayout)/clientes/page": "app/(DashboardLayout)/clientes/page.js",
+  "/(DashboardLayout)/conductores/page": "app/(DashboardLayout)/conductores/page.js"
 }

@@ -33,6 +33,7 @@ const Menuitems = [
     title: "Vehículos",
     icon: IconTir,
     href: "/vehiculos",
+    hrefCreate: "/vehiculos/nuevo",
   },
   // {
   //   id: uniqueId(),
