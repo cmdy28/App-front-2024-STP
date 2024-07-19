@@ -20,7 +20,12 @@ const ConductorList = () => {
     const fetchConductores = async () => {
       try {
         const response = await get<ApiResponse>('/conductor');
-        setConductores(response.data.data);
+        // Ordenar los clientes por el nombre de la persona
+        const conductoresOrdenados = response.data.data.sort((a, b) => 
+          a.persona.nombre.localeCompare(b.persona.nombre)
+        );
+        setConductores(conductoresOrdenados);
+        // setConductores(response.data.data);
       } catch (error) {
         console.error('Error fetching conductores:', error);
       }

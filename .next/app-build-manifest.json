@@ -27,15 +27,10 @@
       "static/chunks/main-app.js",
       "static/chunks/app/loading.js"
     ],
-    "/(DashboardLayout)/vehiculos/page": [
+    "/(DashboardLayout)/clientes/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(DashboardLayout)/vehiculos/page.js"
-    ],
-    "/(DashboardLayout)/vehiculos/nuevo/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(DashboardLayout)/vehiculos/nuevo/page.js"
+      "static/chunks/app/(DashboardLayout)/clientes/page.js"
     ],
     "/(DashboardLayout)/conductores/page": [
       "static/chunks/webpack.js",
@@ -47,10 +42,15 @@
       "static/chunks/main-app.js",
       "static/chunks/app/(DashboardLayout)/conductores/nuevo/page.js"
     ],
-    "/(DashboardLayout)/clientes/page": [
+    "/(DashboardLayout)/vehiculos/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(DashboardLayout)/clientes/page.js"
+      "static/chunks/app/(DashboardLayout)/vehiculos/page.js"
+    ],
+    "/(DashboardLayout)/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(DashboardLayout)/page.js"
     ]
   }
 }

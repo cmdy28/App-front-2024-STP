@@ -4,6 +4,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import { useState, useEffect } from 'react';
 import { get } from '@/app/utils/api';
 import {Msg, Cliente} from '@/app/utils/interface';
+import { IconEdit, IconTrash } from '@tabler/icons-react';
 
 interface ApiResponse {
   msg: Msg;
@@ -17,7 +18,12 @@ const ClienteList = () => {
     const fetchClientes = async () => {
       try {
         const response = await get<ApiResponse>('/cliente');
-        setClientes(response.data.data);
+        // Ordenar los clientes por el nombre de la persona
+        const clientesOrdenados = response.data.data.sort((a, b) => 
+          a.persona.nombre.localeCompare(b.persona.nombre)
+        );
+        setClientes(clientesOrdenados);
+        // setClientes(response.data.data);
       } catch (error) {
         console.error('Error fetching clientes:', error);
       }
@@ -119,11 +125,15 @@ const ClienteList = () => {
                 </Typography>
               </TableCell>
               <TableCell>
-                <IconButton color="primary" aria-label="edit">
-                  <EditIcon />
+              <IconButton color="default" aria-label="edit" 
+              // onClick={() => handleClick('edit')}
+              >
+                  <IconEdit stroke={1} height={30}/>
                 </IconButton>
-                <IconButton aria-label="delete" color="error">
-                  <DeleteOutlineIcon />
+                <IconButton aria-label="delete" color="error" 
+                // onClick={() => handleClick('delete')}
+                >
+                  <IconTrash stroke={1} height={30}/>
                 </IconButton>
               </TableCell>
             </TableRow>

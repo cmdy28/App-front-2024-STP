@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { TextField, Button, Grid, MenuItem, FormControlLabel, FormControl, Switch, InputLabel, Select, SelectChangeEvent, Divider, styled, Snackbar, Alert, Breadcrumbs, Link, Typography } from '@mui/material';
 import { post } from '@/app/utils/api';
-import {Msg, ConductorConDatosPersonales} from '@/app/utils/interface';
+import {Msg, Persona} from '@/app/utils/interface';
 import DashboardCard from '@/app/(DashboardLayout)//components/shared/DashboardCard';
 import PageContainer from '@/app/(DashboardLayout)/components/container/PageContainer';
 import NewButton from '../../components/shared/button';
@@ -18,7 +18,7 @@ const Root = styled('div')(({ theme }) => ({
 
 interface ApiResponse {
   msg : Msg;
-  data: ConductorConDatosPersonales;
+  data: Persona;
 }
 
 interface FormData {
