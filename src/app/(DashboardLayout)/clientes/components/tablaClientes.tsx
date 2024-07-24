@@ -1,4 +1,4 @@
-import {Typography, Box, Table, Divider, TableBody, TableCell, TableHead, TableRow, IconButton} from '@mui/material';
+import {Typography, Box, Table, Divider, TableBody, TableCell, TableHead, TableRow, IconButton, Link} from '@mui/material';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import EditIcon from '@mui/icons-material/Edit';
 import { useState, useEffect } from 'react';
@@ -125,11 +125,13 @@ const ClienteList = () => {
                 </Typography>
               </TableCell>
               <TableCell>
-              <IconButton color="default" aria-label="edit" 
-              // onClick={() => handleClick('edit')}
-              >
-                  <IconEdit stroke={1} height={30}/>
-                </IconButton>
+                <Link href={`/clientes/editar?id=${cliente.id}`}>
+                  <a>
+                    <IconButton color="default" aria-label="edit">
+                      <IconEdit stroke={1} height={30}/>
+                    </IconButton>
+                  </a>
+                </Link>
                 <IconButton aria-label="delete" color="error" 
                 // onClick={() => handleClick('delete')}
                 >

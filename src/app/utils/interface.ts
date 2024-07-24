@@ -68,6 +68,7 @@ export interface Cliente {
 
 // VEHÍCULO
 export interface Vehiculo {
+    id: number;
     tipo_vehiculo_id: number;
     estado_id: number;
     placa: string;

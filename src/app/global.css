@@ -6,6 +6,13 @@ body{
   background-color: #696b9a47;
 } */
 
+/* Tamaño del page container */
+@media (min-width: 1200px) {
+  .css-fi4vst-MuiContainer-root {
+      max-width: none;
+  }
+}
+
 thead {
   background-color: #696b9a14;
 }

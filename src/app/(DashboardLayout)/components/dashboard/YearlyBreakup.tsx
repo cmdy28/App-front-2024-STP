@@ -12,7 +12,7 @@ const YearlyBreakup = () => {
   const theme = useTheme();
   const primary = theme.palette.primary.main;
   const primarylight = '#ecf2ff';
-  const successlight = theme.palette.success.light;
+  const successlight = theme.palette.info.light;
 
   // chart
   const optionscolumnchart: any = {

@@ -4,7 +4,7 @@ import ConductorList from '@/app/(DashboardLayout)/conductores/components/tablaC
 import Divider from '@mui/material/Divider';
 import DashboardCard from '../components/shared/DashboardCard';
 import { Box, Button, ButtonGroup, Grid, Icon } from '@mui/material';
-import SearchField from '../components/shared/SearchField';
+import SearchField from '@/app/(DashboardLayout)/components/shared/SearchField';
 import {IconFileX, IconFileTypePdf} from "@tabler/icons-react";
 
 

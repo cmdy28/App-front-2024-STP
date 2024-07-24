@@ -58,7 +58,6 @@ export default function RootLayout({
         <Container
           sx={{
             paddingTop: "20px",
-            maxWidth: "1200px",
           }}
         >
         {/* <Breadcrumbs aria-label="breadcrumb">

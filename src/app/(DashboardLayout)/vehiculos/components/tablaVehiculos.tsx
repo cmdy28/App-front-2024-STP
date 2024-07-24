@@ -1,4 +1,4 @@
-import {Typography, Box, Table, TableBody, TableCell, TableHead, TableRow, IconButton} from '@mui/material';
+import {Typography, Box, Table, TableBody, TableCell, TableHead, TableRow, IconButton, Divider, Link} from '@mui/material';
 import { useState, useEffect } from 'react';
 import {IconEdit, IconTrash} from "@tabler/icons-react";
 import { get } from '@/app/utils/api';
@@ -33,6 +33,7 @@ const VehiculoList = () => {
 
   return (
     <Box sx={{ overflow: 'auto', width: { xs: '280px', sm: 'auto' }}}>
+        <Divider />
         <Table size='small'
             aria-label="simple table"
             sx={{
@@ -69,7 +70,7 @@ const VehiculoList = () => {
                     </TableCell>
                     <TableCell>
                         <Typography variant="subtitle2" fontWeight={600}>
-                            Capacidad
+                            Capacidad (Kg)
                         </Typography>
                     </TableCell>
                     <TableCell>
@@ -124,13 +125,17 @@ const VehiculoList = () => {
                         </TableCell>
                         <TableCell>
                             <Typography color="textSecondary" variant="subtitle2" fontWeight={400}>
-                                {vehiculo.capacidad}
+                                {vehiculo.capacidad}Kg
                             </Typography>
                         </TableCell>
                         <TableCell>
-                            <IconButton color="default" aria-label="edit" onClick={() => handleClick('edit')}>
+                            <Link href={`/vehiculos/editar?id=${vehiculo.id}`}>
+                            <a>
+                                <IconButton color="default" aria-label="edit">
                                 <IconEdit stroke={1} height={30}/>
-                            </IconButton>
+                                </IconButton>
+                            </a>
+                            </Link>
                             <IconButton aria-label="delete" color="error" onClick={() => handleClick('delete')}>
                                 <IconTrash stroke={1} height={30}/>
                             </IconButton>

@@ -1,4 +1,4 @@
-import {Typography, Box, Table, TableBody, TableCell, TableHead, TableRow, IconButton} from '@mui/material';
+import {Typography, Box, Table, TableBody, TableCell, TableHead, TableRow, IconButton, Link, Divider} from '@mui/material';
 import { useState, useEffect } from 'react';
 import {IconEdit, IconTrash} from "@tabler/icons-react";
 import { get } from '@/app/utils/api';
@@ -20,7 +20,7 @@ const ConductorList = () => {
     const fetchConductores = async () => {
       try {
         const response = await get<ApiResponse>('/conductor');
-        // Ordenar los clientes por el nombre de la persona
+        // Ordenar los conductores por el nombre de la persona
         const conductoresOrdenados = response.data.data.sort((a, b) => 
           a.persona.nombre.localeCompare(b.persona.nombre)
         );
@@ -36,6 +36,7 @@ const ConductorList = () => {
 
   return (
     <Box sx={{ overflow: 'auto', width: { xs: '280px', sm: 'auto' }}}>
+      <Divider />
       <Table size='small'
         aria-label="simple table"
         sx={{
@@ -146,9 +147,13 @@ const ConductorList = () => {
                 </Typography>
               </TableCell>
               <TableCell>
-                <IconButton color="default" aria-label="edit" onClick={() => handleClick('edit')}>
-                  <IconEdit stroke={1} height={30}/>
-                </IconButton>
+                <Link href={`/conductores/editar?id=${conductor.id}`}>
+                  <a>
+                    <IconButton color="default" aria-label="edit">
+                      <IconEdit stroke={1} height={30}/>
+                    </IconButton>
+                  </a>
+                </Link>
                 <IconButton aria-label="delete" color="error" onClick={() => handleClick('delete')}>
                   <IconTrash stroke={1} height={30}/>
                 </IconButton>

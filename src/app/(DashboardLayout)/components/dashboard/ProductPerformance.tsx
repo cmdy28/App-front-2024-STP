@@ -26,7 +26,7 @@ const products = [
         post: "Project Manager",
         pname: "Real Homes WP Theme",
         priority: "Medium",
-        pbg: "secondary.main",
+        pbg: "error.main",
         budget: "24.5",
     },
     {
@@ -44,7 +44,7 @@ const products = [
         post: "Frontend Engineer",
         pname: "Hosting Press HTML",
         priority: "Critical",
-        pbg: "success.main",
+        pbg: "info.main",
         budget: "2.4",
     },
 ];

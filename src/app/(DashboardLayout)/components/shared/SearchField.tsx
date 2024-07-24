@@ -1,48 +1,27 @@
 import * as React from 'react';
-import { Box, InputBase, IconButton } from '@mui/material';
+import Paper from '@mui/material/Paper';
+import InputBase from '@mui/material/InputBase';
+import Divider from '@mui/material/Divider';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
-import axios from 'axios';
-import { Vehiculo, Msg } from '@/app/utils/interface';
+import DirectionsIcon from '@mui/icons-material/Directions';
+import { Box } from '@mui/material';
 
-interface ApiResponse {
-  msg : Msg;
-  data: Vehiculo;
-}
-
-interface SearchFieldProps {
-  onSearch: (results: Vehiculo[]) => void;
-}
-
-export default function SearchField({ onSearch }: SearchFieldProps) {
-  const [searchTerm, setSearchTerm] = React.useState('');
-
-  const handleSearch = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!searchTerm.trim()) return;
-
-    try {
-      const response = await axios.get<ApiResponse>(`/vehiculo?search=${searchTerm}`);
-      onSearch(Object.values(response.data.data));
-    } catch (error) {
-      console.error('Error en la búsqueda:', error);
-    }
-  };
-
+// agregar las respectivas validaciones de que es lo que se va a buscar, la idea es utilizar este mismo componente en varios modulos
+export default function SearchField() {
   return (
     <Box
       component="form"
-      onSubmit={handleSearch}
-      sx={{ p: '0px 4px', display: 'flex', alignItems: 'center', width: 550, height: 30 }}
+      sx={{ p: '0px 4px', display: 'flex', alignItems: 'center', width: 550, height:30 }}
     >
       <InputBase
         sx={{ ml: 1, flex: 1 }}
         size="small"
-        placeholder="Buscar Vehículo"
-        inputProps={{ 'aria-label': 'search vehiculo' }}
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
+        placeholder="Buscar Conductor"
+        inputProps={{ 'aria-label': 'search conductor' }}
       />
-      <IconButton type="submit" sx={{ p: '10px' }} aria-label="search">
+      <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
         <SearchIcon />
       </IconButton>
     </Box>
