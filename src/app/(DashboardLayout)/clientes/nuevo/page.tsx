@@ -21,6 +21,7 @@ const NuevoClientePage = () => {
           <Link underline="hover" color="inherit" href="/">
             INICIO
           </Link>
+          <Typography color="text.primary">PEDIDOS</Typography>
           <Link
             underline="hover"
             color="inherit"

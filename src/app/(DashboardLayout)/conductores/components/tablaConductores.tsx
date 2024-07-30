@@ -1,8 +1,9 @@
 import {Typography, Box, Table, TableBody, TableCell, TableHead, TableRow, IconButton, Link, Divider} from '@mui/material';
 import { useState, useEffect } from 'react';
 import {IconEdit, IconTrash} from "@tabler/icons-react";
-import { get } from '@/app/utils/api';
+import { get, del } from '@/app/utils/api';
 import {Conductor, Msg} from '@/app/utils/interface';
+import ConfirmDeleteModal from '@/app/(DashboardLayout)/components/shared/confirmModal';
 
 interface ApiResponse {
   msg: Msg;
@@ -15,24 +16,46 @@ const handleClick = (modulo: string) => {
 
 const ConductorList = () => {
   const [conductores, setConductores] = useState<Conductor[]>([]);
+  const [openModal, setOpenModal] = useState(false);
+  const [selectedConductorId, setSelectedConductorId] = useState<number | null>(null);
 
   useEffect(() => {
-    const fetchConductores = async () => {
-      try {
-        const response = await get<ApiResponse>('/conductor');
-        // Ordenar los conductores por el nombre de la persona
-        const conductoresOrdenados = response.data.data.sort((a, b) => 
-          a.persona.nombre.localeCompare(b.persona.nombre)
-        );
-        setConductores(conductoresOrdenados);
-        // setConductores(response.data.data);
-      } catch (error) {
-        console.error('Error fetching conductores:', error);
-      }
-    };
-
     fetchConductores();
   }, []);
+
+  const fetchConductores = async () => {
+    try {
+      const response = await get<ApiResponse>('/conductor');
+      const conductoresOrdenados = response.data.data.sort((a, b) => 
+        a.persona.nombre.localeCompare(b.persona.nombre)
+      );
+      setConductores(conductoresOrdenados);
+    } catch (error) {
+      console.error('Error fetching conductores:', error);
+    }
+  };
+
+  const handleDeleteClick = (id: number) => {
+    setSelectedConductorId(id);
+    setOpenModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setOpenModal(false);
+    setSelectedConductorId(null);
+  };
+
+  const handleConfirmDelete = async () => {
+    if (selectedConductorId) {
+      try {
+        await del(`/conductor/${selectedConductorId}`);
+        fetchConductores();
+        handleCloseModal();
+      } catch (error) {
+        console.error('Error deleting conductor:', error);
+      }
+    }
+  };
 
   return (
     <Box sx={{ overflow: 'auto', width: { xs: '280px', sm: 'auto' }}}>
@@ -154,7 +177,7 @@ const ConductorList = () => {
                     </IconButton>
                   </a>
                 </Link>
-                <IconButton aria-label="delete" color="error" onClick={() => handleClick('delete')}>
+                <IconButton aria-label="delete" color="error" onClick={() => handleDeleteClick(conductor.id)}>
                   <IconTrash stroke={1} height={30}/>
                 </IconButton>
               </TableCell>
@@ -162,6 +185,11 @@ const ConductorList = () => {
           ))}
         </TableBody>
       </Table>
+      <ConfirmDeleteModal
+        open={openModal}
+        onClose={handleCloseModal}
+        onConfirm={handleConfirmDelete}
+      />
     </Box>
   );
 };

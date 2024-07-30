@@ -16,6 +16,7 @@ const SamplePage = () => {
           <Link underline="hover" color="inherit" href="/">
             INICIO
           </Link>
+          <Typography color="text.primary">PEDIDOS</Typography>
           <Typography color="text.primary">CLIENTES</Typography>
         </Breadcrumbs>
       </div>

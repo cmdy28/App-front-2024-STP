@@ -57,18 +57,18 @@ const ClienteForm: React.FC<ClienteFormProps> = ({ id, onSuccess }) => {
     try {
       const response = await get<ApiResponseCliente>(`/cliente/${id}`);
       const clienteData = response.data.data; 
-      let personaId : number;
-      personaId = clienteData.persona_id;
-      const responsePersona = await get<ApiResponse>(`/persona/${personaId}`);
-      const personaData = responsePersona.data.data; 
+      // let personaId : number;
+      // personaId = clienteData.persona_id;
+      // const responsePersona = await get<ApiResponse>(`/persona/${personaId}`);
+      // const personaData = responsePersona.data.data; 
       setFormData({
-        tipo_identificacion_id: personaData.tipo_identificacion_id.toString(),
-        nombre: personaData.nombre,
-        cedula: personaData.cedula,
-        email: personaData.email,
-        sexo: personaData.sexo,
-        direccion: personaData.direccion,
-        celular: personaData.celular,
+        tipo_identificacion_id: clienteData.persona.tipo_identificacion_id.toString(),
+        nombre: clienteData.persona.nombre,
+        cedula: clienteData.persona.cedula,
+        email: clienteData.persona.email,
+        sexo: clienteData.persona.sexo,
+        direccion: clienteData.persona.direccion,
+        celular: clienteData.persona.celular,
         tipo_cliente: clienteData.tipo_cliente,
       });
     } catch (error) {
@@ -220,6 +220,7 @@ const ClienteForm: React.FC<ClienteFormProps> = ({ id, onSuccess }) => {
                 personaId = personaResponse.data.data.id;
             }
         
+            console.log(personaId , formData.tipo_cliente);
             // Crear cliente
             await post('/cliente', {
                 persona_id: personaId,
@@ -358,7 +359,7 @@ const ClienteForm: React.FC<ClienteFormProps> = ({ id, onSuccess }) => {
           </Button>
         </Grid>
         <Snackbar open={openSnackbar} autoHideDuration={6000} onClose={handleCloseSnackbar} anchorOrigin={{ vertical: 'top', horizontal: 'right' }}>
-        <Alert onClose={handleCloseSnackbar} severity={snackbarSeverity} variant="filled" sx={{ width: '100%' }}>
+        <Alert onClose={handleCloseSnackbar} severity={snackbarSeverity}  sx={{ width: '100%' }}>
           {snackbarMessage}
         </Alert>
       </Snackbar>

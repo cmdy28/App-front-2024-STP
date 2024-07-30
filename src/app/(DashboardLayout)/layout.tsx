@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Header from "@/app/(DashboardLayout)/layout/header/Header";
 import Sidebar from "@/app/(DashboardLayout)/layout/sidebar/Sidebar";
 import '@/app/global.css';
+import { LoadScript } from "@react-google-maps/api";
 
 
 const MainWrapper = styled("div")(() => ({
@@ -67,7 +68,9 @@ export default function RootLayout({
           {/* ------------------------------------------- */}
           {/* Page Route */}
           {/* ------------------------------------------- */}
+          <LoadScript googleMapsApiKey="AIzaSyAmi79pElD_vVwYEq74PlOpwy0PU8MOeR4" libraries={['places']}>
           <Box sx={{ minHeight: "calc(100vh - 170px)" }}>{children}</Box>
+          </LoadScript>
           {/* ------------------------------------------- */}
           {/* End Page */}
           {/* ------------------------------------------- */}

@@ -2,9 +2,10 @@ import {Typography, Box, Table, Divider, TableBody, TableCell, TableHead, TableR
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import EditIcon from '@mui/icons-material/Edit';
 import { useState, useEffect } from 'react';
-import { get } from '@/app/utils/api';
+import { get, del } from '@/app/utils/api';
 import {Msg, Cliente} from '@/app/utils/interface';
 import { IconEdit, IconTrash } from '@tabler/icons-react';
+import ConfirmDeleteModal from '@/app/(DashboardLayout)/components/shared/confirmModal';
 
 interface ApiResponse {
   msg: Msg;
@@ -13,24 +14,46 @@ interface ApiResponse {
 
 const ClienteList = () => {
   const [clientes, setClientes] = useState<Cliente[]>([]);
+  const [openModal, setOpenModal] = useState(false);
+  const [selectedClientId, setSelectedClientId] = useState<number | null>(null);
 
   useEffect(() => {
-    const fetchClientes = async () => {
-      try {
-        const response = await get<ApiResponse>('/cliente');
-        // Ordenar los clientes por el nombre de la persona
-        const clientesOrdenados = response.data.data.sort((a, b) => 
-          a.persona.nombre.localeCompare(b.persona.nombre)
-        );
-        setClientes(clientesOrdenados);
-        // setClientes(response.data.data);
-      } catch (error) {
-        console.error('Error fetching clientes:', error);
-      }
-    };
-
     fetchClientes();
   }, []);
+
+  const fetchClientes = async () => {
+    try {
+      const response = await get<ApiResponse>('/cliente');
+      const clientesOrdenados = response.data.data.sort((a, b) => 
+        a.persona.nombre.localeCompare(b.persona.nombre)
+      );
+      setClientes(clientesOrdenados);
+    } catch (error) {
+      console.error('Error fetching clientes:', error);
+    }
+  };
+
+  const handleDeleteClick = (id: number) => {
+    setSelectedClientId(id);
+    setOpenModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setOpenModal(false);
+    setSelectedClientId(null);
+  };
+
+  const handleConfirmDelete = async () => {
+    if (selectedClientId) {
+      try {
+        await del(`/cliente/${selectedClientId}`);
+        fetchClientes();
+        handleCloseModal();
+      } catch (error) {
+        console.error('Error al eliminar el cliente:', error);
+      }
+    }
+  };
 
   return (
     <Box sx={{ overflow: 'auto', width: { xs: '280px', sm: 'auto' }}}>
@@ -133,7 +156,7 @@ const ClienteList = () => {
                   </a>
                 </Link>
                 <IconButton aria-label="delete" color="error" 
-                // onClick={() => handleClick('delete')}
+                onClick={() => handleDeleteClick(cliente.id)}
                 >
                   <IconTrash stroke={1} height={30}/>
                 </IconButton>
@@ -142,6 +165,13 @@ const ClienteList = () => {
           ))}
         </TableBody>
       </Table>
+
+      <ConfirmDeleteModal
+        open={openModal}
+        onClose={handleCloseModal}
+        onConfirm={handleConfirmDelete}
+      />
+
     </Box>
   );
 };

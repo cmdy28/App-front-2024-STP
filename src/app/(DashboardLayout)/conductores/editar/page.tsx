@@ -27,6 +27,7 @@ const EditarConductorPage = () => {
           <Link underline="hover" color="inherit" href="/">
             INICIO
           </Link>
+          <Typography color="text.primary">ADMINISTRATIVO</Typography>
           <Link
             underline="hover"
             color="inherit"

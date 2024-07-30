@@ -44,11 +44,11 @@ const NavItem = ({ item, level, pathDirect, onClick }: ItemType) => {
       padding: "8px 10px",
       borderRadius: "8px",
       backgroundColor: level > 1 ? "transparent !important" : "inherit",
-      color: theme.palette.text.secondary,
+      color: '#909bad',
       paddingLeft: "10px",
       "&:hover": {
-        color: '#7375FF',
-        backgroundColor: '#665bd12b',
+        color: '#968df9',
+        backgroundColor: '#43406045',
       },
       "&.Mui-selected": {
         color: "white",

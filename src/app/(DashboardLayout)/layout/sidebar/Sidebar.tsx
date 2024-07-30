@@ -36,7 +36,7 @@ const Sidebar = ({
             sx: {
               width: sidebarWidth,
               boxSizing: "border-box",
-              backgroundColor: '#fff'
+              backgroundColor: '#131424'
             },
           }}
         >
@@ -77,7 +77,7 @@ const Sidebar = ({
         sx: {
           width: sidebarWidth,
           boxShadow: (theme) => theme.shadows[8],
-          backgroundColor: '#fff'
+          backgroundColor: '#131424'
         },
       }}
     >

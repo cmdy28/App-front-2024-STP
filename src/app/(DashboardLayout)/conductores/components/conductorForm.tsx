@@ -61,18 +61,18 @@ const ConductorForm: React.FC<ConductorFormProps> = ({ id, onSuccess }) => {
     try {
       const response = await get<ApiResponseConductor>(`/conductor/${id}`);
       const conductorData = response.data.data; 
-      let personaId : number;
-      personaId = conductorData.persona_id;
-      const responsePersona = await get<ApiResponse>(`/persona/${personaId}`);
-      const personaData = responsePersona.data.data; 
+      // let personaId : number;
+      // personaId = conductorData.persona_id;
+      // const responsePersona = await get<ApiResponse>(`/persona/${personaId}`);
+      // const personaData = responsePersona.data.data; 
       setFormData({
-        tipo_identificacion_id: personaData.tipo_identificacion_id.toString(),
-        nombre: personaData.nombre,
-        cedula: personaData.cedula,
-        email: personaData.email,
-        sexo: personaData.sexo,
-        direccion: personaData.direccion,
-        celular: personaData.celular,
+        tipo_identificacion_id: conductorData.persona.tipo_identificacion_id.toString(),
+        nombre: conductorData.persona.nombre,
+        cedula: conductorData.persona.cedula,
+        email: conductorData.persona.email,
+        sexo: conductorData.persona.sexo,
+        direccion: conductorData.persona.direccion,
+        celular: conductorData.persona.celular,
         licencia_conducir: conductorData.licencia_conducir,
         estado_id: conductorData.estado_id,
         hacer_user: conductorData.hacer_user

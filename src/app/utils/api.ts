@@ -18,3 +18,7 @@ export const post = async <T>(url: string, data: any): Promise<AxiosResponse<T>>
 export const put = async <T>(url: string, data: any): Promise<AxiosResponse<T>> => {
   return await api.put<T>(url, data);
 };
+
+export const del = async <T>(url: string): Promise<AxiosResponse<T>> => {
+  return await api.delete<T>(url);
+};

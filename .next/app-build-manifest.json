@@ -1,9 +1,9 @@
 {
   "pages": {
-    "/(DashboardLayout)/page": [
+    "/(DashboardLayout)/pedidos/nuevo/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(DashboardLayout)/page.js"
+      "static/chunks/app/(DashboardLayout)/pedidos/nuevo/page.js"
     ],
     "/(DashboardLayout)/layout": [
       "static/chunks/webpack.js",
@@ -27,40 +27,15 @@
       "static/chunks/main-app.js",
       "static/chunks/app/loading.js"
     ],
-    "/(DashboardLayout)/conductores/page": [
+    "/(DashboardLayout)/pedidos/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(DashboardLayout)/conductores/page.js"
+      "static/chunks/app/(DashboardLayout)/pedidos/page.js"
     ],
-    "/(DashboardLayout)/clientes/page": [
+    "/authentication/login/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(DashboardLayout)/clientes/page.js"
-    ],
-    "/(DashboardLayout)/clientes/nuevo/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(DashboardLayout)/clientes/nuevo/page.js"
-    ],
-    "/(DashboardLayout)/clientes/editar/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(DashboardLayout)/clientes/editar/page.js"
-    ],
-    "/(DashboardLayout)/conductores/nuevo/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(DashboardLayout)/conductores/nuevo/page.js"
-    ],
-    "/(DashboardLayout)/conductores/editar/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(DashboardLayout)/conductores/editar/page.js"
-    ],
-    "/(DashboardLayout)/vehiculos/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(DashboardLayout)/vehiculos/page.js"
+      "static/chunks/app/authentication/login/page.js"
     ]
   }
 }

@@ -1,8 +1,9 @@
-import {Typography, Box, Table, TableBody, TableCell, TableHead, TableRow, IconButton, Divider, Link} from '@mui/material';
+import {Typography, Box, Table, TableBody, TableCell, TableHead, TableRow, IconButton, Divider, Link, Chip} from '@mui/material';
 import { useState, useEffect } from 'react';
 import {IconEdit, IconTrash} from "@tabler/icons-react";
-import { get } from '@/app/utils/api';
+import { get, del } from '@/app/utils/api';
 import {Msg, Vehiculo} from '@/app/utils/interface';
+import ConfirmDeleteModal from '@/app/(DashboardLayout)/components/shared/confirmModal';
 
 interface ApiResponse {
   msg : Msg;
@@ -13,23 +14,56 @@ const handleClick = (modulo: string) => {
   console.log('Botón clickeado ' + modulo);
 };
 
+const getEstadoColor = (estadoId: number) => {
+    switch(estadoId) {
+        case 1: return 'success'; // activo
+        case 3: return 'warning'; // en mantenimiento
+        case 4: return 'info'; // en ruta
+        case 5: return 'error'; // fuera de servicio
+        default: return 'default';
+    }
+};
+
 const VehiculoList = () => {
   const [vehiculos, setVehiculos] = useState<Vehiculo[]>([]);
+  const [openModal, setOpenModal] = useState(false);
+  const [selectedVehiculoId, setSelectedVehiculoId] = useState<number | null>(null);
 
   useEffect(() => {
-    const fetchVehiculos = async () => {
-      try {
-        const response = await get<ApiResponse>('/vehiculo');
-        const vehiculosData = Object.values(response.data.data);
-        setVehiculos(vehiculosData);
-        console.log(vehiculosData);
-      } catch (error) {
-        console.error('Error fetching vehiculos:', error);
-      }
-    };
-
     fetchVehiculos();
   }, []);
+
+  const fetchVehiculos = async () => {
+    try {
+      const response = await get<ApiResponse>('/vehiculo');
+      const vehiculosData = Object.values(response.data.data);
+      setVehiculos(vehiculosData);
+    } catch (error) {
+      console.error('Error fetching vehiculos:', error);
+    }
+  };
+
+  const handleDeleteClick = (id: number) => {
+    setSelectedVehiculoId(id);
+    setOpenModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setOpenModal(false);
+    setSelectedVehiculoId(null);
+  };
+
+  const handleConfirmDelete = async () => {
+    if (selectedVehiculoId) {
+      try {
+        await del(`/vehiculo/${selectedVehiculoId}`);
+        fetchVehiculos();
+        handleCloseModal();
+      } catch (error) {
+        console.error('Error deleting vehiculo:', error);
+      }
+    }
+  };
 
   return (
     <Box sx={{ overflow: 'auto', width: { xs: '280px', sm: 'auto' }}}>
@@ -71,6 +105,11 @@ const VehiculoList = () => {
                     <TableCell>
                         <Typography variant="subtitle2" fontWeight={600}>
                             Capacidad (Kg)
+                        </Typography>
+                    </TableCell>
+                    <TableCell>
+                        <Typography variant="subtitle2" fontWeight={600}>
+                            Estado
                         </Typography>
                     </TableCell>
                     <TableCell>
@@ -129,6 +168,13 @@ const VehiculoList = () => {
                             </Typography>
                         </TableCell>
                         <TableCell>
+                            <Chip 
+                                label={vehiculo.estado.nombre}
+                                color={getEstadoColor(vehiculo.estado_id)}
+                                size="small"
+                            />
+                        </TableCell>
+                        <TableCell>
                             <Link href={`/vehiculos/editar?id=${vehiculo.id}`}>
                             <a>
                                 <IconButton color="default" aria-label="edit">
@@ -136,7 +182,7 @@ const VehiculoList = () => {
                                 </IconButton>
                             </a>
                             </Link>
-                            <IconButton aria-label="delete" color="error" onClick={() => handleClick('delete')}>
+                            <IconButton aria-label="delete" color="error" onClick={() => handleDeleteClick(vehiculo.id)}>
                                 <IconTrash stroke={1} height={30}/>
                             </IconButton>
                         </TableCell>
@@ -144,6 +190,11 @@ const VehiculoList = () => {
                 ))}
             </TableBody>
         </Table>
+        <ConfirmDeleteModal
+            open={openModal}
+            onClose={handleCloseModal}
+            onConfirm={handleConfirmDelete}
+        />
     </Box>
   );
 };

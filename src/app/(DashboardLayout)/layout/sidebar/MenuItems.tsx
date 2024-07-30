@@ -72,7 +72,7 @@ const Menuitems = [
     id: uniqueId(),
     title: "Mantenimientos",
     icon: IconSettingsCog,
-    href: "/mantenimiento",
+    href: "/mantenimientos",
   },
   {
     navlabel: true,
