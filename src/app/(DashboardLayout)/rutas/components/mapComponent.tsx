@@ -1,8 +1,8 @@
 'use client';
 import React, { useState, useRef, useCallback } from 'react';
-import { GoogleMap, LoadScript, Autocomplete, DirectionsRenderer } from '@react-google-maps/api';
-import { TextField, Button, Box, Grid, Paper, Typography, Snackbar, Alert, Container } from '@mui/material';
-import { get, post, put } from '@/app/utils/api';
+import { GoogleMap, Autocomplete, DirectionsRenderer } from '@react-google-maps/api';
+import { TextField, Button, Box, Grid, Paper, Typography, Snackbar, Alert } from '@mui/material';
+import { post } from '@/app/utils/api';
 import { Directions, Msg, Ruta, UbicacionDestino, UbicacionOrigen } from '@/app/utils/interface';
 
 interface MapComponentProps {

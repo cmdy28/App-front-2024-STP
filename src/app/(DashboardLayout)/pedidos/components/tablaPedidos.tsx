@@ -1,6 +1,6 @@
 import {Typography, Box, Table, TableBody, TableCell, TableHead, TableRow, IconButton, Link, Divider, Chip} from '@mui/material';
 import { useState, useEffect } from 'react';
-import {IconEdit, IconFlag, IconFlagFilled, IconTrash} from "@tabler/icons-react";
+import {IconEdit, IconFlagFilled, IconTrash} from "@tabler/icons-react";
 import { get, del } from '@/app/utils/api';
 import {Pedido, Msg} from '@/app/utils/interface';
 import ConfirmDeleteModal from '@/app/(DashboardLayout)/components/shared/confirmModal';
@@ -22,9 +22,29 @@ const PedidoList = () => {
   const fetchPedidos = async () => {
     try {
       const response = await get<ApiResponse>('/envio');
-      const pedidosOrdenados = response.data.data.sort((a, b) => 
-        new Date(b.fecha_recogida).getTime() - new Date(a.fecha_recogida).getTime()
-      );
+
+      const pedidosOrdenados = response.data.data.sort((a, b) => {
+        const prioridadToNumber = (prioridad: string): number => {
+          switch (prioridad.toUpperCase()) {
+            case 'ALTA': return 1;
+            case 'MEDIA': return 2;
+            case 'BAJA': return 3;
+            default: return 4; 
+          }
+        };
+  
+        const prioridadA = prioridadToNumber(a.prioridad);
+        const prioridadB = prioridadToNumber(b.prioridad);
+  
+        // Primero, ordenamos por prioridad
+        if (prioridadA !== prioridadB) {
+          return prioridadA - prioridadB;
+        }
+  
+        // Si las prioridades son iguales, ordenamos por fecha de recogida (más reciente primero)
+        return new Date(b.fecha_recogida).getTime() - new Date(a.fecha_recogida).getTime();
+      });
+      console.log(pedidosOrdenados);
       setPedidos(pedidosOrdenados);
     } catch (error) {
       console.error('Error fetching pedidos:', error);

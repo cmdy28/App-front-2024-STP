@@ -1,11 +1,8 @@
 'use client';
-import PageContainer from '@/app/(DashboardLayout)/components/container/PageContainer';
 import VehiculoList from '@/app/(DashboardLayout)/vehiculos/components/tablaVehiculos';
 import Divider from '@mui/material/Divider';
-import DashboardCard from '../components/shared/DashboardCard';
-import { Box, Button, ButtonGroup, Grid, Icon } from '@mui/material';
+import { Box, Grid } from '@mui/material';
 import SearchField from '@/app/(DashboardLayout)/components/shared/SearchField';
-import {IconFileX, IconFileTypePdf} from "@tabler/icons-react";
 
 
 const IndexVehiculo = () => {
@@ -17,10 +14,6 @@ const IndexVehiculo = () => {
             <Grid item xs={6}>
             <SearchField/>
             </Grid>
-            {/* <Grid item xs={4} sx={{ alignItems: 'center' }}>
-                <IconFileX stroke={1} height={30}/>
-                <IconFileTypePdf stroke={1} height={30}/>
-            </Grid> */}
         </Grid>
         <br />
         <VehiculoList/>

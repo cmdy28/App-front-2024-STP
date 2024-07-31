@@ -33,7 +33,7 @@ const AsignacionModal: React.FC<AsignacionModalProps> = ({ open, onClose }) => {
   const fetchVehiculos = async () => {
     try {
       const response = await get<{ data: Vehiculo[] }>('/vehiculo');
-      setVehiculos(response.data.data.filter(v => v.estado_id === 1)); // Asumiendo que estado_id 1 es "disponible"
+      setVehiculos(response.data.data.filter(v => v.estado_id === 1)); 
     } catch (error) {
       console.error('Error fetching vehiculos:', error);
     }
@@ -42,7 +42,6 @@ const AsignacionModal: React.FC<AsignacionModalProps> = ({ open, onClose }) => {
   const fetchConductores = async () => {
     try {
       const response = await get<{ data: Conductor[] }>('/conductor');
-    //   setConductores(response.data.data.filter(c => !c.asignado)); // Asumiendo que hay un campo "asignado" en el modelo Conductor
       setConductores(response.data.data);
     } catch (error) {
       console.error('Error fetching conductores:', error);
@@ -76,7 +75,6 @@ const AsignacionModal: React.FC<AsignacionModalProps> = ({ open, onClose }) => {
       alert('Asignación realizada con éxito');
       resetForm();
       onClose();
-      // Actualizar las listas después de la asignación
       fetchVehiculos();
       fetchConductores();
     } catch (error) {

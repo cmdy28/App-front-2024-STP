@@ -117,8 +117,6 @@ const RutaMapModal: React.FC<RutaMapModalProps> = ({ open, onClose, origen, dest
           <>
             <Typography>Distancia: {routeInfo.distance}</Typography>
             <Typography>Duración: {routeInfo.duration}</Typography>
-            {/* <Typography>Origen (Lat, Lng): {routeInfo.startLocation.lat.toFixed(6)}, {routeInfo.startLocation.lng.toFixed(6)}</Typography>
-            <Typography>Destino (Lat, Lng): {routeInfo.endLocation.lat.toFixed(6)}, {routeInfo.endLocation.lng.toFixed(6)}</Typography> */}
           </>
         )}
         <Box sx={{ height: 400, mt: 2 }}>

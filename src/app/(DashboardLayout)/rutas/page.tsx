@@ -4,7 +4,6 @@ import DashboardCard from '../components/shared/DashboardCard';
 import NewButton from '../components/shared/button';
 import IndexRuta from '.';
 import { Breadcrumbs, Link, Typography } from '@mui/material';
-import { LoadScript } from '@react-google-maps/api';
 
 const SamplePage = () => {
   return (

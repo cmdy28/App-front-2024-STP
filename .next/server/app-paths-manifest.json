@@ -1,5 +1,6 @@
 {
-  "/authentication/login/page": "app/authentication/login/page.js",
-  "/(DashboardLayout)/pedidos/nuevo/page": "app/(DashboardLayout)/pedidos/nuevo/page.js",
-  "/(DashboardLayout)/pedidos/page": "app/(DashboardLayout)/pedidos/page.js"
+  "/(DashboardLayout)/pedidos/page": "app/(DashboardLayout)/pedidos/page.js",
+  "/(DashboardLayout)/conductores/page": "app/(DashboardLayout)/conductores/page.js",
+  "/(DashboardLayout)/page": "app/(DashboardLayout)/page.js",
+  "/(DashboardLayout)/vehiculos/page": "app/(DashboardLayout)/vehiculos/page.js"
 }

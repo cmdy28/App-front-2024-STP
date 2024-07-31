@@ -1,4 +1,3 @@
-// ConfirmDeleteModal.tsx
 import { Modal, Box, Typography, Button } from '@mui/material';
 
 interface ConfirmDeleteModalProps {

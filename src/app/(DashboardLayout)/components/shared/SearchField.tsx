@@ -3,7 +3,6 @@ import Paper from '@mui/material/Paper';
 import InputBase from '@mui/material/InputBase';
 import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
-import { TextField } from '@mui/material';
 
 // agregar las respectivas validaciones de que es lo que se va a buscar, la idea es utilizar este mismo componente en varios modulos
 export default function SearchField() {

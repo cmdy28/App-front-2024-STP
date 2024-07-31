@@ -20,7 +20,6 @@ const MantenimientoList = () => {
     const fetchMantenimientos = async () => {
       try {
         const response = await get<ApiResponse>('/mantenimiento');
-        // Filtrar mantenimientos sin vehículo y ordenar por fecha
         const mantenimientosFiltrados = response.data.data
           .filter(mantenimiento => mantenimiento.vehiculo)
           .sort((a, b) => 

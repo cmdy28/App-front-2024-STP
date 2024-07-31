@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { TextField, Button, Grid, MenuItem, Divider, Snackbar, Alert } from '@mui/material';
 import { get, post, put } from '@/app/utils/api';
-import { Msg, Mantenimiento, Vehiculo, MantenimientoDetalle, TipoMantenimiento, TipoIntervalo } from '@/app/utils/interface';
+import { Msg, Mantenimiento, Vehiculo, TipoMantenimiento, TipoIntervalo } from '@/app/utils/interface';
 
 interface MantenimientoFormProps {
   id?: string;

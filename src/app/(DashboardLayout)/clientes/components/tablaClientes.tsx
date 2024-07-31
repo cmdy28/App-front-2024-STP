@@ -1,6 +1,4 @@
 import {Typography, Box, Table, Divider, TableBody, TableCell, TableHead, TableRow, IconButton, Link} from '@mui/material';
-import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
-import EditIcon from '@mui/icons-material/Edit';
 import { useState, useEffect } from 'react';
 import { get, del } from '@/app/utils/api';
 import {Msg, Cliente} from '@/app/utils/interface';

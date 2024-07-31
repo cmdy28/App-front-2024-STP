@@ -61,10 +61,6 @@ export default function RootLayout({
             paddingTop: "20px",
           }}
         >
-        {/* <Breadcrumbs aria-label="breadcrumb">
-          <Typography color="text.primary">Modulo</Typography>
-          <Typography color="text.primary">Item</Typography>
-        </Breadcrumbs> */}
           {/* ------------------------------------------- */}
           {/* Page Route */}
           {/* ------------------------------------------- */}

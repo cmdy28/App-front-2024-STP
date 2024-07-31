@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import { TextField, Button, Grid, MenuItem, Divider, Snackbar, Alert, Autocomplete, Box, Modal, Typography } from '@mui/material';
 import { get, post, put } from '@/app/utils/api';
-import { GoogleMap, LoadScript, DirectionsRenderer } from '@react-google-maps/api';
 import { Msg, Pedido, Cliente, Asignacion, Servicio, ConductorVehiculo, Conductor, Vehiculo, Ruta } from '@/app/utils/interface';
 import MapComponent from '../../rutas/components/mapComponent';
 
@@ -434,24 +433,6 @@ const PedidoForm: React.FC<PedidoFormProps> = ({ id, onSuccess }) => {
             <MenuItem value="BAJA">BAJA</MenuItem>
           </TextField>
         </Grid>
-        {/* <Grid item xs={4}>
-          <TextField
-            select
-            fullWidth
-            name="ruta_id"
-            label="Ruta"
-            value={formData.ruta_id}
-            onChange={handleChange}
-            size="small"
-            required
-          >
-            {rutas.map((ruta) => (
-              <MenuItem key={ruta.id} value={ruta.id}>
-                {ruta.ubicacion_origen.nombre} - {ruta.ubicacion_destino.nombre}
-              </MenuItem>
-            ))}
-          </TextField>
-        </Grid> */}
       </Grid>
       <br />
       <Divider textAlign="center">ASIGNAR CONDUCTOR</Divider>

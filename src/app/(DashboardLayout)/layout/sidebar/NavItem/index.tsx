@@ -68,7 +68,7 @@ const NavItem = ({ item, level, pathDirect, onClick }: ItemType) => {
           component={Link}
           href={item.href}
           disabled={item.disabled}
-          selected={pathDirect === item.href || pathDirect === item.hrefCreate}
+          selected={pathDirect === item.href || pathDirect === item.hrefCreate || pathDirect === item.hrefEdit}
           target={item.external ? "_blank" : ""}
           onClick={onClick}
         >

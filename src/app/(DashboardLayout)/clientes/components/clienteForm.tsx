@@ -31,7 +31,6 @@ interface FormData {
 }
 
 const ClienteForm: React.FC<ClienteFormProps> = ({ id, onSuccess }) => {
-  // ... (estado formData, openSnackbar, etc.)
   const [formData, setFormData] = useState<FormData>({
     tipo_identificacion_id: '',
     nombre: '',
@@ -57,10 +56,6 @@ const ClienteForm: React.FC<ClienteFormProps> = ({ id, onSuccess }) => {
     try {
       const response = await get<ApiResponseCliente>(`/cliente/${id}`);
       const clienteData = response.data.data; 
-      // let personaId : number;
-      // personaId = clienteData.persona_id;
-      // const responsePersona = await get<ApiResponse>(`/persona/${personaId}`);
-      // const personaData = responsePersona.data.data; 
       setFormData({
         tipo_identificacion_id: clienteData.persona.tipo_identificacion_id.toString(),
         nombre: clienteData.persona.nombre,
@@ -99,17 +94,14 @@ const ClienteForm: React.FC<ClienteFormProps> = ({ id, onSuccess }) => {
     try {
       const cedulaResponse = await get<ApiResponse>(`/personas/filter?cedula=${cedula}`);
   
-      // Check if the response has data and the data is an array (assuming multiple personas might be returned)
       if (cedulaResponse.data.data && Array.isArray(cedulaResponse.data.data)) {
-        // If data is an array, iterate to find the matching cedula
         for (const persona of cedulaResponse.data.data) {
           if (persona.cedula === cedula) {
             console.log('encontro cedula: ' + persona.id);
             return { exists: true, id: persona.id };
           }
         }
-      } else if (cedulaResponse.data.data) { // Handle single persona response (optional)
-        // If data is a single object, check directly
+      } else if (cedulaResponse.data.data) { 
         if (cedulaResponse.data.data.cedula === cedula) {
           console.log('encontro cedula: ' + cedulaResponse.data.data.id);
           return { exists: true, id: cedulaResponse.data.data.id };
@@ -118,22 +110,19 @@ const ClienteForm: React.FC<ClienteFormProps> = ({ id, onSuccess }) => {
 
       const emailResponse = await get<ApiResponse>(`/personas/filter?email=${email}`);
       if (emailResponse.data.data && Array.isArray(emailResponse.data.data)) {
-        // If data is an array, iterate to find the matching email
         for (const persona of emailResponse.data.data) {
           if (persona.email === email) {
             console.log('encontro email: ' + persona.id);
             return { exists: true, id: persona.id };
           }
         }
-      } else if (emailResponse.data.data) { // Handle single persona response (optional)
-        // If data is a single object, check directly
+      } else if (emailResponse.data.data) { 
         if (emailResponse.data.data.email === email) {
           console.log('encontro email: ' + emailResponse.data.data.id);
           return { exists: true, id: emailResponse.data.data.id };
         }
       }
   
-      // If no match found, return not found
       return { exists: false, id: null };
     } catch (error) {
       console.error('Error al validar persona:', error);
@@ -258,7 +247,6 @@ const ClienteForm: React.FC<ClienteFormProps> = ({ id, onSuccess }) => {
           >
             <MenuItem value="1">Cédula</MenuItem>
             <MenuItem value="2">RUC</MenuItem>
-            {/* Agrega más opciones según tus necesidades */}
           </TextField>
         </Grid>
         <Grid item xs={3}>
@@ -345,7 +333,6 @@ const ClienteForm: React.FC<ClienteFormProps> = ({ id, onSuccess }) => {
           >
             <MenuItem value="Normal">Normal</MenuItem>
             <MenuItem value="Empresa">Empresa</MenuItem>
-            {/* Agrega más opciones según tus necesidades */}
           </TextField>
         </Grid>
       </Grid>

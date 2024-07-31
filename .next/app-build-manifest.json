@@ -1,9 +1,9 @@
 {
   "pages": {
-    "/(DashboardLayout)/pedidos/nuevo/page": [
+    "/(DashboardLayout)/pedidos/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(DashboardLayout)/pedidos/nuevo/page.js"
+      "static/chunks/app/(DashboardLayout)/pedidos/page.js"
     ],
     "/(DashboardLayout)/layout": [
       "static/chunks/webpack.js",
@@ -27,15 +27,20 @@
       "static/chunks/main-app.js",
       "static/chunks/app/loading.js"
     ],
-    "/(DashboardLayout)/pedidos/page": [
+    "/(DashboardLayout)/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(DashboardLayout)/pedidos/page.js"
+      "static/chunks/app/(DashboardLayout)/page.js"
     ],
-    "/authentication/login/page": [
+    "/(DashboardLayout)/conductores/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/authentication/login/page.js"
+      "static/chunks/app/(DashboardLayout)/conductores/page.js"
+    ],
+    "/(DashboardLayout)/vehiculos/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(DashboardLayout)/vehiculos/page.js"
     ]
   }
 }

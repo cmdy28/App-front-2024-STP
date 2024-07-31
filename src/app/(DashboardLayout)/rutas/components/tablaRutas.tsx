@@ -1,8 +1,8 @@
-import {Typography, Box, Table, Divider, TableBody, TableCell, TableHead, TableRow, IconButton, Link} from '@mui/material';
+import {Typography, Box, Table, Divider, TableBody, TableCell, TableHead, TableRow, IconButton} from '@mui/material';
 import { useState, useEffect } from 'react';
 import { get, del } from '@/app/utils/api';
 import {Msg, Ruta} from '@/app/utils/interface';
-import { IconEdit, IconEye, IconTrash } from '@tabler/icons-react';
+import { IconEye, IconTrash } from '@tabler/icons-react';
 import ConfirmDeleteModal from '@/app/(DashboardLayout)/components/shared/confirmModal';
 import RutaMapModal from './RutaMapModal';
 

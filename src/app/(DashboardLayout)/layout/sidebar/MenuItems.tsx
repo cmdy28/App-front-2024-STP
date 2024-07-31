@@ -27,6 +27,7 @@ const Menuitems = [
     icon: IconUserPlus,
     href: "/conductores",
     hrefCreate: "/conductores/nuevo",
+    hrefEdit: "/conductores/editar"
   },
   {
     id: uniqueId(),
@@ -34,6 +35,7 @@ const Menuitems = [
     icon: IconTir,
     href: "/vehiculos",
     hrefCreate: "/vehiculos/nuevo",
+    hrefEdit: "/vehiculos/editar"
   },
   // {
   //   id: uniqueId(),
@@ -51,12 +53,16 @@ const Menuitems = [
     icon: IconUserPlus,
     href: "/clientes",
     hrefCreate: "/clientes/nuevo",
+    hrefEdit: "/clientes/editar"
+
   },
   {
     id: uniqueId(),
     title: "Pedidos",
     icon: IconChecklist,
     href: "/pedidos",
+    hrefCreate: "/pedidos/nuevo",
+    hrefEdit: "/pedidos/editar"
   },
   {
     navlabel: true,
@@ -67,12 +73,16 @@ const Menuitems = [
     title: "Rutas",
     icon: IconMap2,
     href: "/rutas",
+    hrefCreate: "/rutas/nuevo",
+    hrefEdit: "/rutas/editar"
   },
   {
     id: uniqueId(),
     title: "Mantenimientos",
     icon: IconSettingsCog,
     href: "/mantenimientos",
+    hrefCreate: "/mantenimientos/nuevo",
+    hrefEdit: "/mantenimientos/editar"
   },
   {
     navlabel: true,
