@@ -4,6 +4,24 @@ export interface Msg {
     detail: string;
 }
 
+// USER LOGIN
+export interface User {
+    id: number;
+    rol_id: number;
+    departamento_id: number;
+    nombre_usuario: string;
+    nombre: string;
+    email: string;
+    contrasena: string;
+}
+
+export interface DataUser {
+    usuario: User;
+    rol: number;
+}
+
+
+
 // PERSONA
 export interface Persona {
     id: number;

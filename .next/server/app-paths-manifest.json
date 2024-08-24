@@ -1,6 +1,8 @@
 {
-  "/(DashboardLayout)/pedidos/page": "app/(DashboardLayout)/pedidos/page.js",
+  "/authentication/login/page": "app/authentication/login/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
   "/(DashboardLayout)/conductores/page": "app/(DashboardLayout)/conductores/page.js",
-  "/(DashboardLayout)/page": "app/(DashboardLayout)/page.js",
-  "/(DashboardLayout)/vehiculos/page": "app/(DashboardLayout)/vehiculos/page.js"
+  "/(DashboardLayout)/vehiculos/page": "app/(DashboardLayout)/vehiculos/page.js",
+  "/(DashboardLayout)/clientes/page": "app/(DashboardLayout)/clientes/page.js",
+  "/(DashboardLayout)/pedidos/page": "app/(DashboardLayout)/pedidos/page.js"
 }

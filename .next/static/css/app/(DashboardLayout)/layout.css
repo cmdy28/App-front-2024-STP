@@ -3,18 +3,20 @@
   \****************************************************************************************************************************************************************************************************************************************************************/
 /* background contenedor body */
 body{
-  background-color: #696b9a20;
+  background-color: #696b9a20 !important;
 }
+
 /* .css-1je17zp-MuiContainer-root {
-  background-color: #696b9a47;
+  background-color: #696b9a47 !important;
 } */
 
 /* Tamaño del page container */
 @media (min-width: 1200px) {
   .css-fi4vst-MuiContainer-root {
-      max-width: none;
+      max-width: none !important;
   }
 }
+
 
 thead {
   background-color: #696b9a14;
